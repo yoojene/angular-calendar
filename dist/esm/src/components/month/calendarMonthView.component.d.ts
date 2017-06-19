@@ -74,7 +74,7 @@ export declare class CalendarMonthViewComponent implements OnChanges, OnInit, On
     }>;
     /**
      *
-     * Called when the day cell is clicked
+     * Called when the day cell is pressed
      */
     dayPressed: EventEmitter<{
         day: MonthViewDay;
