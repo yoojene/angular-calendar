@@ -71,7 +71,7 @@ import { CalendarUtils } from '../../providers/calendarUtils.provider';
               (dragLeave)="day.dragOver = false"
               (drop)="day.dragOver = false; eventDropped(day, $event.dropData.event)"
               (eventClicked)="eventClicked.emit({event: $event.event})"
-              id="ngCal_Main_Item_CalendarDay_{{rowIndex}}_{{i}}_{{day.date}}">
+              id="ngCal_Main_Item_CalendarDay_{{day.date.getDate()}}_{{day.date.getMonth()}}">
             </mwl-calendar-month-cell>
           </div>
           <mwl-calendar-open-day-events
