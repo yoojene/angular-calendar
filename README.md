@@ -25,7 +25,7 @@ https://mattlewis92.github.io/angular-calendar/
 
 ## Screenshots
 
-[![iPhone](/%40docs/images/iPhone.png)](iPhone)
+[!(https://github.com/yoojene/angular-calendar/blob/master/%40docs/images/iPhone.png](iPhone)
 
 ## About
 
