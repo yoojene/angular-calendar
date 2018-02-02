@@ -14,63 +14,66 @@ https://mattlewis92.github.io/angular-calendar/
 
 ## Table of contents
 
-- [About](#about)
-- [Getting started](#getting-started)
-- [Documentation](#documentation)
-- [Breaking changes](#breaking-changes)
-- [FAQ](#faq)
-- [Angular 1 version](#angular-1-version)
-- [Development](#development)
-- [License](#license)
+* [About](#about)
+* [Getting started](#getting-started)
+* [Documentation](#documentation)
+* [Breaking changes](#breaking-changes)
+* [FAQ](#faq)
+* [Angular 1 version](#angular-1-version)
+* [Development](#development)
+* [License](#license)
+
+## Screenshots
+
+[![iPhone](/%40docs/images/iPhone.png)](iPhone)
 
 ## About
 
 A calendar component for Angular 4.0+ that can display events on a month, week or day view. The successor of [angular-bootstrap-calendar](https://github.com/mattlewis92/angular-bootstrap-calendar).
+
+This version is a fork created for Pfizer and is intended to be used with the `newton-calendar` Angular component sourced from [newton-components](https://github.com/pfizer/newton-components), of which this is also a dependency. The original project readme can be found [here](https://github.com/yoojene/angular-calendar)
 
 ## Getting started
 
 First install through npm:
 
 ```bash
-npm install --save angular-calendar
+npm install @pfizer/angular-calendar
+npm install @pfizer/newton-components
+
+// Other dependencies:
+npm install @angular/animations
+npm install moment
 ```
 
 Next include the CSS file somewhere into your app:
 
 ```
-node_modules/angular-calendar/dist/css/angular-calendar.css
+node_modules/@pfizer/angular-calendar/dist/css/angular-calendar.css
 ```
 
-Finally import the calendar module into your apps module:
+For Ionic v2/3 apps, a custom `ionic-app-script` such as [this](https://github.com/pfizer/newton-miguia/blob/master/config/copy_ngcal.config.js) can be defined to copy it into `/build` at runtime.
+
+Update `index.html`
+
+```
+  <link href="build/angular-calendar.css" rel="stylesheet">
+```
+
+Finally import the `NewtonCalendarModule` into your apps module:
 
 ```typescript
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarModule } from 'angular-calendar';
+import { NewtonCalendarModule } from '@pfizer/newton-components';
 
 @NgModule({
-  imports: [
-    BrowserAnimationsModule,
-    CalendarModule.forRoot()
-  ]
+  imports: [BrowserAnimationsModule, NewtonCalendarModule]
 })
 export class MyModule {}
 ```
 
-Then you can use the [`mwl-calendar-month-view`](https://mattlewis92.github.io/angular-calendar/docs/components/CalendarMonthViewComponent.html), [`mwl-calendar-week-view`](https://mattlewis92.github.io/angular-calendar/docs/components/CalendarWeekViewComponent.html) and [`mwl-calendar-day-view`](https://mattlewis92.github.io/angular-calendar/docs/components/CalendarDayViewComponent.html) components in your app. For a full e2e example see the [kitchen sink demo](https://mattlewis92.github.io/angular-calendar/#/kitchen-sink). 
-
-### Module bundlers
-
-You can find quick start examples for all common module bundlers in the [build-tool-examples](https://github.com/mattlewis92/angular-calendar/tree/master/build-tool-examples) folder.
-
-### Usage without a module bundler
-
-```html
-<script src="node_modules/angular-calendar/dist/umd/angular-calendar.js"></script>
-<script>
-    // everything is exported angularCalendar namespace
-</script>
-```
+Then you can use the [`mwl-calendar-month-view`](https://mattlewis92.github.io/angular-calendar/docs/components/CalendarMonthViewComponent.html), [`mwl-calendar-week-view`](https://mattlewis92.github.io/angular-calendar/docs/components/CalendarWeekViewComponent.html) and [`mwl-calendar-day-view`](https://mattlewis92.github.io/angular-calendar/docs/components/CalendarDayViewComponent.html) components in your app. For a full e2e example see the [kitchen sink demo](https://mattlewis92.github.io/angular-calendar/#/kitchen-sink).
 
 ### Usage with Angular Universal
 
